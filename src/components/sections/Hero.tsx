@@ -79,7 +79,7 @@ export default function Hero() {
           >
             <span className="inline-block backdrop-blur-sm bg-white/95 dark:bg-black/95 px-4 py-3 rounded-2xl border border-white/40 dark:border-white/30">
               <span className="bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-200 text-transparent bg-clip-text">
-                Hi, I'm Yonatan Belihu
+                Hi, I&apos;m Yonatan Belihu
               </span>
             </span>
             <motion.span

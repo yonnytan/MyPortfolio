@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import { TechIcon, FloatingIcon, FloatingShape } from "../ui/FloatingElements";
-import { ParallaxSection } from "../ui/ParallaxSection";
 
 export default function About() {
   const skills = {
