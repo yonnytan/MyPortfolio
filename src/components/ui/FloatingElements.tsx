@@ -35,7 +35,13 @@ export function TechIcon({
       {type === "emoji" ? (
         <span className="text-4xl">{content}</span>
       ) : (
-        <img src={content} alt="Tech Logo" className="w-12 h-12" />
+        <Image
+          src={content}
+          alt="Tech Logo"
+          width={48}
+          height={48}
+          className="w-12 h-12"
+        />
       )}
     </div>
   );

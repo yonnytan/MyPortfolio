@@ -4,7 +4,10 @@ import { ParallaxSection } from "../ui/ParallaxSection";
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-32 bg-white dark:bg-black relative">
+    <section
+      id="contact"
+      className="py-10 sm:py-16 bg-white dark:bg-black relative min-h-[50vh] sm:min-h-[60vh] flex items-center"
+    >
       {/* Tech Icons */}
       <TechIcon
         type="svg"
@@ -57,9 +60,9 @@ export default function Contact() {
       <FloatingShape className="top-40 left-[20%]" delay={1.2} />
       <FloatingShape className="bottom-40 right-[15%]" delay={2.2} />
 
-      <div className="max-w-5xl mx-auto px-6">
+      <div className="max-w-5xl mx-auto px-6 w-full">
         <ParallaxSection>
-          <motion.h2 className="text-4xl sm:text-6xl font-bold mb-12 text-center">
+          <motion.h2 className="text-3xl sm:text-6xl font-bold mb-8 sm:mb-16 text-center">
             <span className="inline-block backdrop-blur-sm bg-white/95 dark:bg-black/95 px-8 py-4 rounded-2xl border border-white/40 dark:border-white/30">
               <span className="bg-gradient-to-r from-blue-600 to-violet-600 text-transparent bg-clip-text">
                 Get In Touch
@@ -67,14 +70,14 @@ export default function Contact() {
             </span>
           </motion.h2>
           <motion.div className="max-w-3xl mx-auto text-center">
-            <div className="backdrop-blur-xl bg-white/[0.99] dark:bg-black/[0.99] px-10 py-8 rounded-2xl border border-white/40 dark:border-white/30 mb-8 shadow-xl">
-              <p className="text-2xl text-gray-800 dark:text-gray-200">
+            <div className="backdrop-blur-xl bg-white/[0.99] dark:bg-black/[0.99] px-6 sm:px-10 py-6 sm:py-8 rounded-2xl border border-white/40 dark:border-white/30 mb-6 sm:mb-8 shadow-xl">
+              <p className="text-xl sm:text-2xl text-gray-800 dark:text-gray-200">
                 Thanks for making it to the bottom! I really appreciate you
-                taking the time to check out my work. If you're interested in
-                connecting, my socials are below. Feel free to reach out!
+                taking the time to check out my work. If you&apos;re interested
+                in connecting, my socials are below. Feel free to reach out!
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pb-8 sm:pb-0">
               <motion.a
                 href="mailto:belihuyonatan@gmail.com"
                 className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-violet-600 text-white px-10 py-5 rounded-full font-medium hover:opacity-90 transition-opacity text-xl group w-full sm:w-auto justify-center"

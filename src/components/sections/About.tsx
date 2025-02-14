@@ -86,56 +86,54 @@ export default function About() {
 
         <div className="grid gap-8">
           {/* Bio Section */}
-          <ParallaxSection direction="horizontal">
-            <motion.div
-              className="backdrop-blur-sm bg-white/95 dark:bg-black/95 p-8 rounded-2xl border border-white/40 dark:border-white/30"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
-            >
-              <h3 className="bg-gradient-to-r from-blue-600 to-violet-600 text-transparent bg-clip-text text-2xl font-semibold mb-6">
-                My Journey
-              </h3>
-              <div className="space-y-4">
-                <p className="text-lg text-gray-600 dark:text-gray-300">
-                  I'm a recent graduate from Virginia Tech, where my studies in
-                  computer science and data analytics ignited a profound
-                  commitment to utilizing technology for community benefit. I
-                  love building tools to <i>itch my own scratches</i> and
-                  creating apps that I know will help others. My drive to help
-                  people shapes my approach to work, inspiring me to seek out
-                  collaborative environments where teamwork and innovation
-                  thrive. I'm always eager to tackle challenging tasks, applying
-                  what I've learned to solve real-world problems while
-                  continuously expanding my knowledge. My goal is to make a
-                  meaningful impact through my professional endeavors,
-                  contributing to a better, more connected world.
-                </p>
-              </div>
-            </motion.div>
-          </ParallaxSection>
+          <motion.div
+            className="backdrop-blur-sm bg-white/95 dark:bg-black/95 p-8 rounded-2xl border border-white/40 dark:border-white/30"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h3 className="bg-gradient-to-r from-blue-600 to-violet-600 text-transparent bg-clip-text text-2xl font-semibold mb-6">
+              My Journey
+            </h3>
+            <div className="space-y-4">
+              <p className="text-lg text-gray-600 dark:text-gray-300">
+                I&apos;m a recent graduate from Virginia Tech, where my studies
+                in computer science and data analytics ignited a profound
+                commitment to utilizing technology for community benefit. I love
+                building tools to <i>scratch my own itches</i> and creating apps
+                that I know will help others. My drive to help people shapes my
+                approach to work, inspiring me to seek out collaborative
+                environments where teamwork and innovation thrive. I&apos;m
+                always eager to tackle challenging tasks, applying what
+                I&apos;ve learned to solve real-world problems while
+                continuously expanding my knowledge. My goal is to make a
+                meaningful impact through my professional endeavors,
+                contributing to a better, more connected world.
+              </p>
+            </div>
+          </motion.div>
 
           {/* Skills Grid */}
-          <ParallaxSection direction="horizontal">
-            <div className="grid md:grid-cols-3 gap-6">
-              {Object.entries(skills).map(([category, items], index) => (
-                <motion.div
-                  key={category}
-                  className="backdrop-blur-sm bg-white/95 dark:bg-black/95 p-6 rounded-2xl border border-white/40 dark:border-white/30 h-full"
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{
-                    opacity: 1,
-                    y: 0,
-                    transition: {
-                      duration: 0.8,
-                      delay: index * 0.2,
-                      ease: [0.21, 1.11, 0.81, 0.99],
-                    },
-                  }}
-                  viewport={{ once: true, margin: "-100px" }}
-                >
-                  <h3 className="text-xl font-semibold mb-4 flex items-center gap-2">
+          <div className="flex flex-col md:grid md:grid-cols-3 gap-6">
+            {Object.entries(skills).map(([category, items], index) => (
+              <motion.div
+                key={category}
+                className="backdrop-blur-sm bg-white/95 dark:bg-black/95 rounded-2xl border border-white/40 dark:border-white/30"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    duration: 0.8,
+                    delay: index * 0.2,
+                    ease: [0.21, 1.11, 0.81, 0.99],
+                  },
+                }}
+                viewport={{ once: true, margin: "-100px" }}
+              >
+                <details className="group md:open p-6">
+                  <summary className="text-xl font-semibold flex items-center gap-2 cursor-pointer md:cursor-default list-none">
                     <span
                       className={`bg-gradient-to-r from-blue-600 to-violet-600 text-transparent bg-clip-text ${
                         category === "Programming Languages"
@@ -152,8 +150,21 @@ export default function About() {
                         ? " ⚙️"
                         : " 🗣️"}
                     </span>
-                  </h3>
-                  <ul className="space-y-2">
+                    <svg
+                      className="w-4 h-4 ml-auto transition-transform md:hidden group-open:rotate-180"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </summary>
+                  <ul className="space-y-2 mt-6">
                     {Array.isArray(items)
                       ? items.map(
                           (
@@ -191,10 +202,10 @@ export default function About() {
                         )
                       : null}
                   </ul>
-                </motion.div>
-              ))}
-            </div>
-          </ParallaxSection>
+                </details>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

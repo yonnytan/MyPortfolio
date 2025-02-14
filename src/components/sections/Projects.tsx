@@ -21,7 +21,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="py-32 mb-32 bg-gray-50 dark:bg-gray-900/50 relative overflow-hidden"
+      className="py-32 bg-gray-50 dark:bg-gray-900/50 relative overflow-hidden"
     >
       {/* Tech Icons */}
       <TechIcon
@@ -84,10 +84,10 @@ export default function Projects() {
           </span>
         </motion.h2>
 
-        <div className="space-y-32 pb-48">
+        <div className="space-y-32">
           {/* Mobile Apps */}
           <ParallaxSection>
-            <div className="space-y-12">
+            <div className="space-y-12 mb-60 md:mb-0">
               <motion.h3 className="text-4xl font-bold mb-12 text-center">
                 <span className="inline-block backdrop-blur-sm bg-white/95 dark:bg-black/95 px-6 py-3 rounded-2xl border border-white/40 dark:border-white/30">
                   <span className="text-gray-900 dark:text-white">
@@ -164,14 +164,14 @@ export default function Projects() {
           {/* Websites */}
           <ParallaxSection>
             <div className="space-y-12">
-              <motion.h3 className="text-4xl font-bold mb-12 text-center">
+              <motion.h3 className="text-4xl font-bold mb-12 text-center mt-60 md:mt-0">
                 <span className="inline-block backdrop-blur-sm bg-white/95 dark:bg-black/95 px-6 py-3 rounded-2xl border border-white/40 dark:border-white/30">
                   <span className="text-gray-900 dark:text-white">
                     Websites
                   </span>
                 </span>
               </motion.h3>
-              <div className="grid grid-cols-1 gap-12">
+              <div className="grid grid-cols-1 gap-12 pb-60 md:pb-48">
                 <motion.div
                   className="bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden border border-white/40 dark:border-white/30"
                   initial={{ opacity: 0, x: 100 }}
@@ -266,7 +266,7 @@ export default function Projects() {
                       </a>
                     </h4>
                     <p className="text-gray-600 dark:text-gray-300 mb-6">
-                      This is a landing page for Beatbytes! An IOS app that you
+                      This is a landing page for BeatBytes! An iOS app that you
                       can find on the Apple App Store now!
                     </p>
                     <div className="flex flex-wrap gap-3">
@@ -331,7 +331,7 @@ export default function Projects() {
                       My personal portfolio website showcasing my projects and
                       skills. Built with modern web technologies and featuring a
                       clean, responsive design with smooth animations and dark
-                      mode support. The site you're currently viewing! 🚀
+                      mode support. The site you&apos;re currently viewing! 🚀
                     </p>
                     <div className="flex flex-wrap gap-3">
                       {[

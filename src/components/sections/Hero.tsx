@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function Hero() {
   return (
     <motion.section
-      className="relative min-h-[90vh] flex flex-col justify-center items-center md:items-start max-w-5xl mx-auto px-6 pb-40 md:pb-0"
+      className="relative min-h-[90vh] flex flex-col justify-center items-center max-w-5xl mx-auto px-6 pb-20 md:pb-0 md:items-start"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
@@ -68,11 +68,11 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="flex flex-col md:flex-row items-center gap-12">
+      <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12 w-full">
         {/* Text Content */}
-        <div className="flex-1 flex flex-col items-center md:items-start pt-20 md:pt-0">
+        <div className="flex-1 flex flex-col items-center md:items-start">
           <motion.h1
-            className="text-4xl sm:text-5xl font-bold mb-8 text-center md:text-left flex items-center gap-4"
+            className="text-3xl sm:text-5xl font-bold mb-6 sm:mb-8 text-center md:text-left flex flex-col sm:flex-row items-center gap-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -83,7 +83,7 @@ export default function Hero() {
               </span>
             </span>
             <motion.span
-              className="inline-block origin-bottom text-5xl"
+              className="hidden sm:inline-block origin-bottom text-4xl sm:text-5xl"
               animate={{ rotate: [0, 20, 0] }}
               transition={{
                 duration: 0.5,
@@ -97,15 +97,15 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p
-            className="text-3xl mb-12 text-center md:text-left"
+            className="text-xl sm:text-3xl mb-8 sm:mb-12 text-center md:text-left"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
             <span className="inline-block backdrop-blur-sm bg-white/95 dark:bg-black/95 px-4 py-3 rounded-2xl border border-white/40 dark:border-white/30">
               <span className="text-gray-600 dark:text-gray-300">
-                Software Engineer & Full Stack Developer crafting exceptional
-                digital experiences
+                A Full Stack Developer who loves bringing ideas to life, one
+                project at a time!
               </span>
             </span>
           </motion.p>
@@ -115,7 +115,7 @@ export default function Hero() {
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
-            className="relative w-64 h-64 rounded-full overflow-hidden backdrop-blur-sm bg-white/95 dark:bg-black/95 border-2 border-white/40 dark:border-white/30 shadow-lg mb-12 md:hidden -mt-8"
+            className="relative w-48 h-48 sm:w-64 sm:h-64 rounded-full overflow-hidden backdrop-blur-sm bg-white/95 dark:bg-black/95 border-2 border-white/40 dark:border-white/30 shadow-lg mb-8 sm:mb-12 md:hidden -mt-4 sm:-mt-8"
           >
             <Image
               src="/profile-placeholder.png"
@@ -155,7 +155,7 @@ export default function Hero() {
                   });
                 }
               }}
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-violet-600 text-white px-8 py-4 rounded-full font-medium hover:opacity-90 transition-opacity text-lg group"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-violet-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-medium hover:opacity-90 transition-opacity text-base sm:text-lg group"
             >
               View My Work
               <svg
