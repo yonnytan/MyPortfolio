@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { TechIcon, FloatingIcon, FloatingShape } from "../ui/FloatingElements";
 import { ParallaxSection } from "../ui/ParallaxSection";
 import { ProjectSlideshow } from "../ui/ProjectSlideshow";
+import { HiOutlineExternalLink } from "react-icons/hi";
 
 export default function Projects() {
   const mobileAppTechStacks = [
@@ -85,10 +86,208 @@ export default function Projects() {
         </motion.h2>
 
         <div className="space-y-32">
+          {/* Websites */}
+          <ParallaxSection>
+            <div className="space-y-12">
+              <motion.h3 className="text-4xl font-bold mb-12 text-center">
+                <span className="inline-block backdrop-blur-sm bg-white/95 dark:bg-black/95 px-6 py-3 rounded-2xl border border-white/40 dark:border-white/30">
+                  <span className="text-gray-900 dark:text-white">
+                    Websites
+                  </span>
+                </span>
+              </motion.h3>
+              <div className="grid grid-cols-1 gap-12 pb-60 md:pb-48">
+                <motion.div
+                  className="bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden border border-white/40 dark:border-white/30"
+                  initial={{ opacity: 0, x: 100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
+                >
+                  <ProjectSlideshow
+                    images={[
+                      {
+                        src: "/projects/websites/website-1.png",
+                        alt: "Website Screenshot 1",
+                      },
+                      {
+                        src: "/projects/websites/website-2.png",
+                        alt: "Website Screenshot 2",
+                      },
+                      {
+                        src: "/projects/websites/website-3.png",
+                        alt: "Website Screenshot 3",
+                      },
+                    ]}
+                  />
+                  <div className="p-8">
+                    <h4 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+                      <a
+                        href="https://colorlensapp.site"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors inline-flex items-center gap-2 group"
+                      >
+                        ColorLens (colorlensapp.site)
+                        <HiOutlineExternalLink className="inline-block text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" />
+                      </a>
+                    </h4>
+                    <p className="text-gray-600 dark:text-gray-300 mb-6">
+                      ColorLens is a tool created for quickly extracting and
+                      refining color palettes from images. It features a
+                      versatile color picker that allows users to manually
+                      adjust sampling points, re-randomize selections, and
+                      fine-tune colors for precision. Palettes can be downloaded
+                      as a PNG, JPG, or JSON file, making it ideal for designers
+                      and developers. 🎨
+                    </p>
+                    <div className="flex flex-wrap gap-3">
+                      {[
+                        "React",
+                        "JavaScript",
+                        "TailwindCSS",
+                        "HTML5 Canvas API",
+                        "Chroma.js",
+                      ].map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-sm font-medium"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* New Website Card */}
+                <motion.div
+                  className="bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden border border-white/40 dark:border-white/30"
+                  initial={{ opacity: 0, x: -100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
+                >
+                  <ProjectSlideshow
+                    images={[
+                      {
+                        src: "/projects/websites/website-4.png",
+                        alt: "Website Screenshot 4",
+                      },
+                      {
+                        src: "/projects/websites/website-5.png",
+                        alt: "Website Screenshot 5",
+                      },
+                    ]}
+                  />
+                  <div className="p-8">
+                    <h4 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+                      <a
+                        href="https://beatbytes.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors inline-flex items-center gap-2 group"
+                      >
+                        BeatByes App Landing Page
+                        <HiOutlineExternalLink className="inline-block text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" />
+                      </a>
+                    </h4>
+                    <p className="text-gray-600 dark:text-gray-300 mb-6">
+                      This is a landing page for BeatBytes! An iOS app that you
+                      can find on the Apple App Store now!
+                    </p>
+                    <div className="flex flex-wrap gap-3">
+                      {[
+                        "React",
+                        "Next.js",
+                        "TypeScript",
+                        "TailwindCSS",
+                        "HTML",
+                      ].map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-sm font-medium"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Third Website Card */}
+                <motion.div
+                  className="bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden border border-white/40 dark:border-white/30"
+                  initial={{ opacity: 0, x: 100 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
+                >
+                  <ProjectSlideshow
+                    images={[
+                      {
+                        src: "/projects/websites/website-6.png",
+                        alt: "Website Screenshot 6",
+                      },
+                      {
+                        src: "/projects/websites/website-7.png",
+                        alt: "Website Screenshot 7",
+                      },
+                      {
+                        src: "/projects/websites/website-8.png",
+                        alt: "Website Screenshot 8",
+                      },
+                      {
+                        src: "/projects/websites/website-9.png",
+                        alt: "Website Screenshot 9",
+                      },
+                    ]}
+                  />
+                  <div className="p-8">
+                    <h4 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
+                      <a
+                        href="https://kennanproperty.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors inline-flex items-center gap-2 group"
+                      >
+                        Kennan Property Management
+                        <HiOutlineExternalLink className="inline-block text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors" />
+                      </a>
+                    </h4>
+                    <p className="text-gray-600 dark:text-gray-300 mb-6">
+                      My personal portfolio website showcasing my projects and
+                      skills. Built with modern web technologies and featuring a
+                      clean, responsive design with smooth animations and dark
+                      mode support. The site you&apos;re currently viewing! 🚀
+                    </p>
+                    <div className="flex flex-wrap gap-3">
+                      {[
+                        "React",
+                        "Next.js",
+                        "TypeScript",
+                        "TailwindCSS",
+                        "Framer Motion",
+                        "Vercel",
+                      ].map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-sm font-medium"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+          </ParallaxSection>
+
           {/* Mobile Apps */}
           <ParallaxSection>
-            <div className="space-y-12 mb-60 md:mb-0">
-              <motion.h3 className="text-4xl font-bold mb-12 text-center">
+            <div className="space-y-12 mb-36 sm:mb-0">
+              <motion.h3 className="text-4xl font-bold mb-12 text-center mt-60 md:mt-0">
                 <span className="inline-block backdrop-blur-sm bg-white/95 dark:bg-black/95 px-6 py-3 rounded-2xl border border-white/40 dark:border-white/30">
                   <span className="text-gray-900 dark:text-white">
                     Mobile Apps
@@ -157,201 +356,6 @@ export default function Projects() {
                     </div>
                   </motion.div>
                 ))}
-              </div>
-            </div>
-          </ParallaxSection>
-
-          {/* Websites */}
-          <ParallaxSection>
-            <div className="space-y-12">
-              <motion.h3 className="text-4xl font-bold mb-12 text-center mt-60 md:mt-0">
-                <span className="inline-block backdrop-blur-sm bg-white/95 dark:bg-black/95 px-6 py-3 rounded-2xl border border-white/40 dark:border-white/30">
-                  <span className="text-gray-900 dark:text-white">
-                    Websites
-                  </span>
-                </span>
-              </motion.h3>
-              <div className="grid grid-cols-1 gap-12 pb-60 md:pb-48">
-                <motion.div
-                  className="bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden border border-white/40 dark:border-white/30"
-                  initial={{ opacity: 0, x: 100 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
-                >
-                  <ProjectSlideshow
-                    images={[
-                      {
-                        src: "/projects/websites/website-1.png",
-                        alt: "Website Screenshot 1",
-                      },
-                      {
-                        src: "/projects/websites/website-2.png",
-                        alt: "Website Screenshot 2",
-                      },
-                      {
-                        src: "/projects/websites/website-3.png",
-                        alt: "Website Screenshot 3",
-                      },
-                    ]}
-                  />
-                  <div className="p-8">
-                    <h4 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
-                      <a
-                        href="https://colorlensapp.site"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                      >
-                        ColorLens (colorlensapp.site)
-                      </a>
-                    </h4>
-                    <p className="text-gray-600 dark:text-gray-300 mb-6">
-                      ColorLens is a tool created for quickly extracting and
-                      refining color palettes from images. It features a
-                      versatile color picker that allows users to manually
-                      adjust sampling points, re-randomize selections, and
-                      fine-tune colors for precision. Palettes can be downloaded
-                      as a PNG, JPG, or JSON file, making it ideal for designers
-                      and developers. 🎨
-                    </p>
-                    <div className="flex flex-wrap gap-3">
-                      {[
-                        "React",
-                        "JavaScript",
-                        "TailwindCSS",
-                        "HTML5 Canvas API",
-                        "Chroma.js",
-                      ].map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-sm font-medium"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* New Website Card */}
-                <motion.div
-                  className="bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden border border-white/40 dark:border-white/30"
-                  initial={{ opacity: 0, x: -100 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
-                >
-                  <ProjectSlideshow
-                    images={[
-                      {
-                        src: "/projects/websites/website-4.png",
-                        alt: "Website Screenshot 4",
-                      },
-                      {
-                        src: "/projects/websites/website-5.png",
-                        alt: "Website Screenshot 5",
-                      },
-                    ]}
-                  />
-                  <div className="p-8">
-                    <h4 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
-                      <a
-                        href="https://beatbytes.app/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                      >
-                        BeatByes App Landing Page
-                      </a>
-                    </h4>
-                    <p className="text-gray-600 dark:text-gray-300 mb-6">
-                      This is a landing page for BeatBytes! An iOS app that you
-                      can find on the Apple App Store now!
-                    </p>
-                    <div className="flex flex-wrap gap-3">
-                      {[
-                        "React",
-                        "Next.js",
-                        "TypeScript",
-                        "TailwindCSS",
-                        "HTML",
-                      ].map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-sm font-medium"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Third Website Card */}
-                <motion.div
-                  className="bg-white/95 dark:bg-gray-800/95 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden border border-white/40 dark:border-white/30"
-                  initial={{ opacity: 0, x: 100 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
-                >
-                  <ProjectSlideshow
-                    images={[
-                      {
-                        src: "/projects/websites/website-6.png",
-                        alt: "Website Screenshot 6",
-                      },
-                      {
-                        src: "/projects/websites/website-7.png",
-                        alt: "Website Screenshot 7",
-                      },
-                      {
-                        src: "/projects/websites/website-8.png",
-                        alt: "Website Screenshot 8",
-                      },
-                      {
-                        src: "/projects/websites/website-9.png",
-                        alt: "Website Screenshot 9",
-                      },
-                    ]}
-                  />
-                  <div className="p-8">
-                    <h4 className="text-2xl font-bold mb-4 text-gray-900 dark:text-white">
-                      <a
-                        href="https://kennanproperty.com/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-                      >
-                        Kennan Property Management
-                      </a>
-                    </h4>
-                    <p className="text-gray-600 dark:text-gray-300 mb-6">
-                      My personal portfolio website showcasing my projects and
-                      skills. Built with modern web technologies and featuring a
-                      clean, responsive design with smooth animations and dark
-                      mode support. The site you&apos;re currently viewing! 🚀
-                    </p>
-                    <div className="flex flex-wrap gap-3">
-                      {[
-                        "React",
-                        "Next.js",
-                        "TypeScript",
-                        "TailwindCSS",
-                        "Framer Motion",
-                        "Vercel",
-                      ].map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-4 py-2 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-sm font-medium"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </motion.div>
               </div>
             </div>
           </ParallaxSection>

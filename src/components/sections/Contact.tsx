@@ -80,7 +80,7 @@ export default function Contact() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pb-8 sm:pb-0">
               <motion.a
                 href="mailto:belihuyonatan@gmail.com"
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-violet-600 text-white px-10 py-5 rounded-full font-medium hover:opacity-90 transition-opacity text-xl group w-full sm:w-auto justify-center"
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-violet-600 text-white px-8 py-4 rounded-xl font-medium hover:opacity-90 transition-opacity text-lg group w-full sm:w-auto justify-center shadow-sm"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -103,7 +103,7 @@ export default function Contact() {
                 href="https://www.linkedin.com/in/yonatan-belihu/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-violet-600 text-white px-10 py-5 rounded-full font-medium hover:opacity-90 transition-opacity text-xl group w-full sm:w-auto justify-center"
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-violet-600 text-white px-8 py-4 rounded-xl font-medium hover:opacity-90 transition-opacity text-lg group w-full sm:w-auto justify-center shadow-sm"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -120,7 +120,7 @@ export default function Contact() {
                 href="https://github.com/yonnytan"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-violet-600 text-white px-10 py-5 rounded-full font-medium hover:opacity-90 transition-opacity text-xl group w-full sm:w-auto justify-center"
+                className="inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-violet-600 text-white px-8 py-4 rounded-xl font-medium hover:opacity-90 transition-opacity text-lg group w-full sm:w-auto justify-center shadow-sm"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

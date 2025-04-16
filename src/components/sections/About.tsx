@@ -1,7 +1,34 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { TechIcon, FloatingIcon, FloatingShape } from "../ui/FloatingElements";
+import { useState } from "react";
+import {
+  SiPython,
+  SiOpenjdk as SiJava,
+  SiJavascript,
+  SiHtml5,
+  SiCss3,
+  SiSwift,
+  SiTypescript,
+  SiR,
+  SiC,
+  SiPhp,
+  SiPostgresql,
+  SiReact,
+  SiNextdotjs,
+  SiNodedotjs,
+  SiGithub,
+  SiFirebase,
+  SiPostman,
+  SiDocker,
+  SiVuedotjs,
+} from "react-icons/si";
+import { IoLanguage } from "react-icons/io5";
+import { IconType } from "react-icons";
+import React from "react";
 
 export default function About() {
+  const [openCategories, setOpenCategories] = useState<string[]>([]);
+
   const skills = {
     "Programming Languages": [
       "Python",
@@ -26,11 +53,41 @@ export default function About() {
       "Docker",
       "Vue.js",
     ],
-    Languages: [
+    "Spoken Languages": [
       { name: "English", level: "Fluent" },
       { name: "Spanish", level: "Fluent" },
       { name: "Amharic", level: "Fluent" },
     ],
+  };
+
+  const skillIcons: Record<string, IconType> = {
+    Python: SiPython,
+    Java: SiJava,
+    JavaScript: SiJavascript,
+    HTML: SiHtml5,
+    CSS: SiCss3,
+    Swift: SiSwift,
+    TypeScript: SiTypescript,
+    R: SiR,
+    C: SiC,
+    PHP: SiPhp,
+    SQL: SiPostgresql,
+    React: SiReact,
+    "Next.js": SiNextdotjs,
+    "Node.js": SiNodedotjs,
+    GitHub: SiGithub,
+    Firebase: SiFirebase,
+    "REST APIs": SiPostman,
+    Docker: SiDocker,
+    "Vue.js": SiVuedotjs,
+  };
+
+  const handleToggle = (category: string) => {
+    setOpenCategories((prev) =>
+      prev.includes(category)
+        ? prev.filter((cat) => cat !== category)
+        : [...prev, category]
+    );
   };
 
   return (
@@ -86,13 +143,13 @@ export default function About() {
         <div className="grid gap-8">
           {/* Bio Section */}
           <motion.div
-            className="backdrop-blur-sm bg-white/95 dark:bg-black/95 p-8 rounded-2xl border border-white/40 dark:border-white/30"
+            className="backdrop-blur-sm bg-white/95 dark:bg-black/95 p-8 rounded-2xl border border-white/40 dark:border-white/30 text-center"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="bg-gradient-to-r from-blue-600 to-violet-600 text-transparent bg-clip-text text-2xl font-semibold mb-6">
+            <h3 className="bg-gradient-to-r from-blue-600 to-violet-600 text-transparent bg-clip-text text-2xl font-semibold mb-6 text-center">
               My Journey
             </h3>
             <div className="space-y-4">
@@ -118,7 +175,6 @@ export default function About() {
             {Object.entries(skills).map(([category, items], index) => (
               <motion.div
                 key={category}
-                className="backdrop-blur-sm bg-white/95 dark:bg-black/95 rounded-2xl border border-white/40 dark:border-white/30"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{
                   opacity: 1,
@@ -130,78 +186,73 @@ export default function About() {
                   },
                 }}
                 viewport={{ once: true, margin: "-100px" }}
+                className="backdrop-blur-sm bg-white/95 dark:bg-black/95 rounded-2xl p-6 text-center"
               >
-                <details className="group md:open p-6">
-                  <summary className="text-xl font-semibold flex items-center gap-2 cursor-pointer md:cursor-default list-none">
-                    <span
-                      className={`bg-gradient-to-r from-blue-600 to-violet-600 text-transparent bg-clip-text ${
-                        category === "Programming Languages"
-                          ? "text-md"
-                          : "text-xl"
-                      }`}
-                    >
-                      {category}
-                    </span>
+                <div className="h-24 mb-8">
+                  <div className="flex items-center gap-3 justify-center">
                     <span className="text-4xl">
                       {category === "Programming Languages"
-                        ? " 💻"
+                        ? "💻"
                         : category === "Technologies & Tools"
-                        ? " ⚙️"
-                        : " 🗣️"}
+                        ? "⚙️"
+                        : "🗣️"}
                     </span>
-                    <svg
-                      className="w-4 h-4 ml-auto transition-transform md:hidden group-open:rotate-180"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 9l-7 7-7-7"
-                      />
-                    </svg>
-                  </summary>
-                  <ul className="space-y-2 mt-6">
-                    {Array.isArray(items)
-                      ? items.map(
-                          (
-                            item: string | { name: string; level: string },
-                            itemIndex
-                          ) => (
-                            <motion.li
-                              key={typeof item === "string" ? item : item.name}
-                              className="text-gray-600 dark:text-gray-300 flex items-center gap-2"
-                              initial={{ opacity: 0, x: -20 }}
-                              whileInView={{
-                                opacity: 1,
-                                x: 0,
-                                transition: {
-                                  duration: 0.5,
-                                  delay: index * 0.2 + itemIndex * 0.1,
-                                  ease: "easeOut",
-                                },
-                              }}
-                              viewport={{ once: true, margin: "-100px" }}
-                            >
-                              <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
-                              {typeof item === "string" ? (
-                                item
-                              ) : (
+                    <span className="bg-gradient-to-r from-blue-600 to-violet-600 text-transparent bg-clip-text text-2xl font-bold">
+                      {category}
+                    </span>
+                  </div>
+                  <div className="mt-4 border-b-2 border-blue-500/20 dark:border-blue-400/20 w-full" />
+                </div>
+
+                <ul className="space-y-3">
+                  {Array.isArray(items)
+                    ? items.map(
+                        (
+                          item: string | { name: string; level: string },
+                          itemIndex
+                        ) => (
+                          <motion.li
+                            key={typeof item === "string" ? item : item.name}
+                            className="text-gray-600 dark:text-gray-300 flex items-center gap-2 font-medium justify-center"
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{
+                              opacity: 1,
+                              x: 0,
+                              transition: {
+                                duration: 0.5,
+                                delay: itemIndex * 0.1,
+                                ease: "easeOut",
+                              },
+                            }}
+                            viewport={{ once: true, margin: "-50px" }}
+                          >
+                            {typeof item === "string" ? (
+                              <>
+                                {skillIcons[item] ? (
+                                  <span className="text-blue-500 dark:text-blue-400 text-lg">
+                                    {React.createElement(skillIcons[item])}
+                                  </span>
+                                ) : (
+                                  <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                                )}
+                                <span>{item}</span>
+                              </>
+                            ) : (
+                              <>
+                                <IoLanguage className="text-blue-500 dark:text-blue-400 text-lg" />
                                 <span className="flex justify-between w-full">
                                   <span>{item.name}</span>
-                                  <span className="text-blue-500 dark:text-blue-400">
+                                  <span className="text-blue-500 dark:text-blue-400 ml-2">
                                     {item.level}
                                   </span>
                                 </span>
-                              )}
-                            </motion.li>
-                          )
+                              </>
+                            )}
+                          </motion.li>
                         )
-                      : null}
-                  </ul>
-                </details>
+                      )
+                    : null}
+                </ul>
               </motion.div>
             ))}
           </div>
